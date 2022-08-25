@@ -69,7 +69,7 @@ endif ()
 file(GLOB_RECURSE srcs RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "src/**.cpp")
 file(GLOB_RECURSE headers RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "include/**.h")
 add_library(PAFa ${srcs} ${headers})
-target_link_libraries(PAFa bioparser)
+target_link_libraries(PAFa bioparser biosoup)
 
 add_executable(PAFa_exe src/main.cpp)
 target_link_libraries(PAFa_exe
