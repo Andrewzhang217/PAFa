@@ -1,5 +1,5 @@
-#ifndef PAFA_INCLUDE_OVERLAP_H_
-#define PAFA_INCLUDE_OVERLAP_H_
+#ifndef PAFA_INCLUDE_DATA_STRUCTURE_H_
+#define PAFA_INCLUDE_DATA_STRUCTURE_H_
 
 #include <memory>
 
@@ -21,12 +21,12 @@ class Overlap {
             std::uint32_t overlap_len,
             std::uint32_t quality
     );
-  private:
     const char *q_name_;
     std::uint32_t q_name_len_;
     std::uint32_t q_len_;
     std::uint32_t q_begin_;
     std::uint32_t q_end_;
+    char orientation_;
     const char *t_name_;
     std::uint32_t t_name_len_;
     std::uint32_t t_len_;
@@ -35,8 +35,14 @@ class Overlap {
     std::uint32_t num_matches_;
     std::uint32_t overlap_len_;
     std::uint32_t quality_;
-    char orientation_;
 };
-
+class Sequence {
+  public:
+    const std::string& name_;
+    std::uint32_t start_;
+    std::uint32_t end_;
+    std::uint32_t id_;
+    Sequence(const std::string &name, uint32_t start, uint32_t anEnd, std::uint32_t id);
+};
 } // namespace PAFa
-#endif //PAFA_INCLUDE_OVERLAP_H_
+#endif //PAFA_INCLUDE_DATA_STRUCTURE_H_

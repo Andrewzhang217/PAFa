@@ -73,7 +73,4 @@ target_link_libraries(PAFa bioparser biosoup)
 
 add_executable(PAFa_exe src/main.cpp)
 target_link_libraries(PAFa_exe
-        biosoup::biosoup
-        thread_pool::thread_pool
-        bioparser::bioparser
         PAFa)

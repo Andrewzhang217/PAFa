@@ -8,6 +8,8 @@
 #include <iostream>
 #include <memory>
 
+std::atomic<std::uint32_t> biosoup::NucleicAcid::num_objects{0};
+
 namespace PAFa{
 Input::Input(const std::string &path) :
         path_(path) {}

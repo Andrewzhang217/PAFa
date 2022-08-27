@@ -1,12 +1,12 @@
-#ifndef PAFA_SRC_INPUT_H_
-#define PAFA_SRC_INPUT_H_
+#ifndef PAFA_INCLUDE_INPUT_H_
+#define PAFA_INCLUDE_INPUT_H_
 
 #include <vector>
 #include <memory>
 
 #include "bioparser/parser.hpp"
 #include "biosoup/nucleic_acid.hpp"
-#include "overlap.h"
+#include "data_structure.h"
 
 namespace PAFa {
 class Input {
@@ -21,4 +21,4 @@ class Input {
 };
 } // namespace PAFa
 
-#endif //PAFA_SRC_INPUT_H_
+#endif //PAFA_INCLUDE_INPUT_H_

@@ -1,4 +1,4 @@
-#include "../include/overlap.h"
+#include "../include/data_structure.h"
 
 namespace PAFa {
 Overlap::Overlap(const char *q_name,
@@ -29,4 +29,6 @@ Overlap::Overlap(const char *q_name,
                                           overlap_len_(overlap_len),
                                           quality_(quality) {};
 
+Sequence::Sequence(const std::string &name, uint32_t start, uint32_t anEnd, std::uint32_t id)
+        : name_(name), start_(start), end_(anEnd), id_(id) {}
 }
