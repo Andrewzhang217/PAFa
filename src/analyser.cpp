@@ -2,6 +2,7 @@
 #include "../include/input.h"
 
 #include <algorithm>    // std::sort
+#include <cassert>
 #include <memory>
 
 namespace PAFa {
