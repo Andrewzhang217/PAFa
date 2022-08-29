@@ -67,7 +67,7 @@ std::pair<std::uint32_t, std::uint32_t> Analyser::FindRange(std::unique_ptr<bios
         start += *curr - '0';
     }
     int underscore_count = 1;
-    for (; underscore_count < 5; ++curr) {
+    for (; underscore_count < 6; ++curr) {
         if (*curr == '_') underscore_count++;
     }
     for (; std::isdigit(*curr); ++curr) {
