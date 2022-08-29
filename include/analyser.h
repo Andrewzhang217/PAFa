@@ -26,7 +26,7 @@ class Analyser {
     const std::string &paf_file_path_;
     const std::string &sequence_file_path_;
     std::vector<std::unique_ptr<Sequence>> targets_;
-    std::vector<std::unique_ptr<Overlap>> paf_overlaps_;
+    SetOverlaps paf_overlaps_;
     SetOverlaps all_true_overlaps_;
     void Initialise();
     std::vector<std::unique_ptr<Sequence>> ConvertToSequence(std::vector<std::unique_ptr<biosoup::NucleicAcid>> &raw_sequences);

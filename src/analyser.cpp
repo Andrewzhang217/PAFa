@@ -13,7 +13,10 @@ Analyser::Analyser(const std::string &paf_file_path, const std::string &sequence
 void Analyser::Initialise() {
     Input paf{paf_file_path_};
     Input fastaq{sequence_file_path_};
-    paf_overlaps_ = paf.ParsePAF();
+    auto paf_overlaps_raw = paf.ParsePAF();
+    for (auto &paf_overlap : paf_overlaps_raw) {
+        paf_overlaps_.emplace(paf_overlap->q_name_, paf_overlap->t_name_);
+    }
     num_of_paf_overlaps = paf_overlaps_.size();
     auto nucleic_acid = fastaq.ParseFASTAQ();
     targets_ = ConvertToSequence(nucleic_acid);
@@ -78,9 +81,7 @@ void Analyser::FindTruePafOverlaps() {
     if (all_true_overlaps_.empty()) return;
     int true_positive = 0;
     for (const auto &overlap : paf_overlaps_) {
-        std::string a = overlap->q_name_;
-        std::string b = overlap->t_name_;
-        if (all_true_overlaps_.find(std::pair(a, b)) != all_true_overlaps_.end()) {
+        if (all_true_overlaps_.find(overlap) != all_true_overlaps_.end()) {
             ++true_positive;
         }
     }
