@@ -23,19 +23,7 @@ class Overlap {
             std::uint32_t quality
     );
     std::string q_name_;
-    std::uint32_t q_name_len_;
-    std::uint32_t q_len_;
-    std::uint32_t q_begin_;
-    std::uint32_t q_end_;
-    char orientation_;
     std::string t_name_;
-    std::uint32_t t_name_len_;
-    std::uint32_t t_len_;
-    std::uint32_t t_begin_;
-    std::uint32_t t_end_;
-    std::uint32_t num_matches_;
-    std::uint32_t overlap_len_;
-    std::uint32_t quality_;
 };
 class Sequence {
   public:
