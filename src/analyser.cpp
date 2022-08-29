@@ -36,7 +36,7 @@ void Analyser::FindAllTrueOverlaps() {
     std::sort(targets_.begin(), targets_.end(), comp);
     for (auto lhs = targets_.begin(); lhs != targets_.end(); ++lhs) {
         for (auto rhs = lhs + 1; rhs != targets_.end(); ++rhs) {
-            if (rhs->get()->start_ > lhs->get()->start_) break;
+            if (rhs->get()->start_ > lhs->get()->end_) break;
             if (IsTrueOverlap(*lhs, *rhs))
                 set.emplace(lhs->get()->name_, rhs->get()->name_);
         }

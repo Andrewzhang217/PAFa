@@ -2,6 +2,7 @@
 #define PAFA_INCLUDE_DATA_STRUCTURE_H_
 
 #include <memory>
+#include <string>
 
 namespace PAFa {
 class Overlap {
@@ -21,13 +22,13 @@ class Overlap {
             std::uint32_t overlap_len,
             std::uint32_t quality
     );
-    const char *q_name_;
+    std::string q_name_;
     std::uint32_t q_name_len_;
     std::uint32_t q_len_;
     std::uint32_t q_begin_;
     std::uint32_t q_end_;
     char orientation_;
-    const char *t_name_;
+    std::string t_name_;
     std::uint32_t t_name_len_;
     std::uint32_t t_len_;
     std::uint32_t t_begin_;
